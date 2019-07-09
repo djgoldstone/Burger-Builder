@@ -8,7 +8,8 @@ $(document).ready(function() {
       $.ajax({
         method: "PUT",
         url: "/burgers/" + burger_id
-      }).then(function() {
+      }).then(function(message) {
+          console.log(message);
         location.reload();
       });
   
