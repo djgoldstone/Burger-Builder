@@ -11,13 +11,15 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-    burger.insertOne(req.body.burger_name, function() {
+    burger.insertOne(req.body.burger_name, function(result) {
+        console.log(result);
         res.redirect("/");
     });
 });
 
-router.put("/:id", function(req, res) {
-    burger.updateOne(req.params.id, function() {
+router.put("/burgers/:id", function(req, res) {
+    burger.updateOne(req.params.id, function(result) {
+        console.log(result);
         res.redirect("/");
     });
 });
