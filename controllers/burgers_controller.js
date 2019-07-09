@@ -5,9 +5,10 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
-        res.render("index", { burgers: data });
-    });
+    res.send("hi");
+    // burger.selectAll(function(data) {
+    //     res.render("index", { burgers: data });
+    // });
 });
 
 router.post("/", function(req, res) {
